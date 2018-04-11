@@ -100,7 +100,7 @@ namespace LOtE
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            //spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
+            spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
 
             spriteBatch.Draw(pers.Texture, new Vector2(pers.X, pers.Y),
    new Rectangle(pers.currentFrame.X1 * pers.FrameWidth,
