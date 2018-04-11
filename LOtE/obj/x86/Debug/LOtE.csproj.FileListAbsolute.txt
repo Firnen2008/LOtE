@@ -1,0 +1,29 @@
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\pers.xnb
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\shield.xnb
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\sword.xnb
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\swordeffect1.xnb
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\LOtE.exe
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\LOtE.pdb
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\MonoGame.Framework.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XInput.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\MonoGame.Framework.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XInput.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.csprojResolveAssemblyReference.cache
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.exe
+C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.pdb
+D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.exe
+D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.pdb
