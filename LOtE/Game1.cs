@@ -88,6 +88,7 @@ namespace LOtE
             {
                 pers.Direction = Direction.Down;
             }
+            pers.Animation();
 
             pers.Move(1);
 
@@ -100,14 +101,14 @@ namespace LOtE
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
+            //spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
 
             spriteBatch.Draw(pers.Texture, new Vector2(pers.X, pers.Y),
    new Rectangle(pers.currentFrame.X1 * pers.FrameWidth,
        pers.currentFrame.X2 * pers.FrameHeight,
        pers.FrameWidth, pers.FrameHeight),
    Color.White, 0, Vector2.Zero,
-   1, SpriteEffects.None, 0);
+   1, pers.effect, 0);
 
             spriteBatch.End();
             base.Draw(gameTime);

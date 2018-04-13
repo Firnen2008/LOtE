@@ -13,7 +13,7 @@ namespace LOtE
         protected Texture2D texture;
         private int frameWidth;
         private int frameHeight;
-        private SpriteEffects effect;
+        public SpriteEffects effect;
         public Line currentFrame;
         public Line spriteSize;
 
@@ -68,6 +68,12 @@ namespace LOtE
         {
             get
             {
+                //if (Direction == Direction.Left)
+                //{
+                //    effect = SpriteEffects.FlipHorizontally;
+                //    return texture;
+                //}
+                
                 return texture;
             }
             set
@@ -132,6 +138,17 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
+        public void Animation()
+        {
+            ++currentFrame.X1;
+            if (currentFrame.X1 >= spriteSize.X1)
+            {
+                currentFrame.X1 = 0;
+                ++currentFrame.X2;
+                if (currentFrame.X2 >= spriteSize.X2)
+                    currentFrame.X2 = 0;
+            }
+        }
         public void SetPosition(Position position)
         {
             X = position.X;
@@ -148,13 +165,14 @@ namespace LOtE
             {
                 case Direction.Left:
                     X -= speed;
-                    effect = SpriteEffects.FlipVertically;
+                    effect = SpriteEffects.FlipHorizontally;
                     break;
                 case Direction.Up:
                     Y -= speed;
                     break;
                 case Direction.Right:
                     X += speed;
+                    effect = SpriteEffects.None;
                     break;
                 case Direction.Down:
                     Y += speed; 

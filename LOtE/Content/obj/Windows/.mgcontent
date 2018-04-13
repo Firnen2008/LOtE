@@ -4,9 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/derf1/documents/visual studio 2015/Projects/Lote/LOtE/Content/images/sword.png</File>
-    <File>C:/Users/derf1/documents/visual studio 2015/Projects/Lote/LOtE/Content/images/swordeffect1.png</File>
-    <File>C:/Users/derf1/documents/visual studio 2015/Projects/Lote/LOtE/Content/images/pers.png</File>
-    <File>C:/Users/derf1/documents/visual studio 2015/Projects/Lote/LOtE/Content/images/shield.png</File>
+    <File>D:/git/LOtE/LOtE/Content/images/sword.png</File>
+    <File>D:/git/LOtE/LOtE/Content/images/swordeffect1.png</File>
+    <File>D:/git/LOtE/LOtE/Content/images/pers.png</File>
+    <File>D:/git/LOtE/LOtE/Content/images/shield.png</File>
   </SourceFiles>
 </SourceFileCollection>

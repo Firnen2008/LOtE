@@ -25,3 +25,30 @@ C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\bin\Windows\x86\D
 C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.csprojResolveAssemblyReference.cache
 C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.exe
 C:\Users\derf1\Documents\Visual Studio 2015\Projects\LOtE\LOtE\obj\x86\Debug\LOtE.pdb
+D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.exe
+D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.pdb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\pers.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\shield.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\sword.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\swordeffect1.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\LOtE.exe
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\LOtE.pdb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D9.dll
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
+D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.csprojResolveAssemblyReference.cache
