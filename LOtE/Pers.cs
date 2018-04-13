@@ -16,6 +16,7 @@ namespace LOtE
         public SpriteEffects effect;
         public Line currentFrame;
         public Line spriteSize;
+        private bool animationFlag = false;
 
         public Line CurrentFrame
         {
@@ -67,13 +68,7 @@ namespace LOtE
         public Texture2D Texture
         {
             get
-            {
-                //if (Direction == Direction.Left)
-                //{
-                //    effect = SpriteEffects.FlipHorizontally;
-                //    return texture;
-                //}
-                
+            {   
                 return texture;
             }
             set
@@ -140,9 +135,25 @@ namespace LOtE
         }
         public void Animation()
         {
+            //if (animationFlag)
+            //{
+            //    switch (PersDirection)
+            //    {
+            //        case PersDirection.Standart:
+            //            currentFrame.X1 = 6;
+            //            animationFlag = true;
+            //            break;
+            //        case PersDirection.Standart:
+            //            currentFrame.X1 = 6;
+            //            animationFlag = true;
+            //            break;
+            //    }
+            //}
+
             ++currentFrame.X1;
             if (currentFrame.X1 >= spriteSize.X1)
             {
+                animationFlag = false;
                 currentFrame.X1 = 0;
                 ++currentFrame.X2;
                 if (currentFrame.X2 >= spriteSize.X2)

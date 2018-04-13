@@ -17,6 +17,9 @@ namespace LOtE
         KeyboardState crrKS;
         KeyboardState preKS;
 
+        int currentTime = 0; // сколько времени прошло
+        int period = 50; // период обновления в миллисекундах
+
         float fps = 60;
 
         float Fps
@@ -41,9 +44,8 @@ namespace LOtE
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 400);
+            //TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 400);
             cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10));
-            TargetElapsedTime = TimeSpan.FromSeconds(1.0f / fps);
         }
 
         protected override void Initialize()
@@ -66,29 +68,40 @@ namespace LOtE
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            currentTime += gameTime.ElapsedGameTime.Milliseconds;
+
             crrKS = Keyboard.GetState();
 
             if (preKS.IsKeyUp(Keys.Down) && preKS.IsKeyUp(Keys.Left) && preKS.IsKeyUp(Keys.Right) && preKS.IsKeyUp(Keys.Up))
             {
                 pers.Direction = Direction.Stop;
+                pers.PersDirection = PersDirection.Standart;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 pers.Direction = Direction.Left;
+                pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 pers.Direction = Direction.Right;
+                pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
                 pers.Direction = Direction.Up;
+                pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
                 pers.Direction = Direction.Down;
+                pers.PersDirection = PersDirection.Run;
             }
-            pers.Animation();
+            if (currentTime > period)
+            {
+                currentTime -= period;
+                pers.Animation();
+            }
 
             pers.Move(1);
 
