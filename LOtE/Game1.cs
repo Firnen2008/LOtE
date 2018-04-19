@@ -66,44 +66,74 @@ namespace LOtE
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            { Exit(); }
 
             currentTime += gameTime.ElapsedGameTime.Milliseconds;
 
             crrKS = Keyboard.GetState();
 
-            if (preKS.IsKeyUp(Keys.Down) && preKS.IsKeyUp(Keys.Left) && preKS.IsKeyUp(Keys.Right) && preKS.IsKeyUp(Keys.Up))
+            if (preKS.IsKeyUp(Keys.S) && preKS.IsKeyUp(Keys.A) && preKS.IsKeyUp(Keys.D) && preKS.IsKeyUp(Keys.W))//Down , Left , Right , Up
             {
                 pers.Direction = Direction.Stop;
                 pers.PersDirection = PersDirection.Standart;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+
+            //стоит сделать так , чтобы перс мог ходить по диагонали //правил код CreaHaGame                    \/
+            if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))//left && Up
+            {
+                //code...
+                pers.Direction = Direction.LeftUp;
+                pers.PersDirection = PersDirection.Run;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.W) && Keyboard.GetState().IsKeyDown(Keys.D))//Up && right
+            {
+                //code...
+                pers.Direction = Direction.UpRight;
+                pers.PersDirection = PersDirection.Run;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))//right && down
+            {
+                //code...
+                pers.Direction = Direction.RightDown;
+                pers.PersDirection = PersDirection.Run;
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.S) && Keyboard.GetState().IsKeyDown(Keys.A))//down && left
+            {
+                //code...
+                pers.Direction = Direction.DownLeft;
+                pers.PersDirection = PersDirection.Run;
+            }
+
+            //поменял местами с верхней проеркой 
+            //лол , только так работает , если только проверять букву А , то if перехватывает всегда и по деагонали не идет перс
+            if (Keyboard.GetState().IsKeyDown(Keys.A) && !(Keyboard.GetState().IsKeyDown(Keys.W)) && !(Keyboard.GetState().IsKeyDown(Keys.S)))
             {
                 pers.Direction = Direction.Left;
                 pers.PersDirection = PersDirection.Run;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            if (Keyboard.GetState().IsKeyDown(Keys.D) && !(Keyboard.GetState().IsKeyDown(Keys.S)) && !(Keyboard.GetState().IsKeyDown(Keys.W)))
             {
                 pers.Direction = Direction.Right;
                 pers.PersDirection = PersDirection.Run;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            if (Keyboard.GetState().IsKeyDown(Keys.W) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
             {
                 pers.Direction = Direction.Up;
                 pers.PersDirection = PersDirection.Run;
             }
-            if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            if (Keyboard.GetState().IsKeyDown(Keys.S) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
             {
                 pers.Direction = Direction.Down;
                 pers.PersDirection = PersDirection.Run;
-            }
+            }//правил код CreaHaGame --- --- --- --- --- --- ---     /\       ======         ======        /\
+
             if (currentTime > period)
             {
                 currentTime -= period;
                 pers.Animation();
             }
 
-            pers.Move(1);
+            pers.Move(3);
 
             preKS = crrKS;
             base.Update(gameTime);

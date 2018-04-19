@@ -133,27 +133,33 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
-        public void Animation()
+        public void Animation(/*int size, int start, int row*/)
         {
-            //if (animationFlag)
-            //{
-            //    switch (PersDirection)
-            //    {
-            //        case PersDirection.Standart:
-            //            currentFrame.X1 = 6;
-            //            animationFlag = true;
-            //            break;
-            //        case PersDirection.Standart:
-            //            currentFrame.X1 = 6;
-            //            animationFlag = true;
-            //            break;
-            //    }
-            //}
-
+            //animationFlag = true;
+            ////if (animationFlag)
+            ////{
+            ////    switch (PersDirection)
+            ////    {
+            ////        case PersDirection.Standart:
+            ////            currentFrame.X1 = 6;
+            ////            animationFlag = true;
+            ////            break;
+            ////        case PersDirection.Standart:
+            ////            currentFrame.X1 = 6;
+            ////            animationFlag = true;
+            ////            break;
+            ////    }
+            ////}
+            //currentFrame.X1 = start;
+            //currentFrame.X2 = row;
             ++currentFrame.X1;
             if (currentFrame.X1 >= spriteSize.X1)
             {
-                animationFlag = false;
+                //if ((spriteSize.X1 - start) > size)
+                //{
+                //    size = spriteSize.X1 - start;
+                //}
+                ////animationFlag = false;
                 currentFrame.X1 = 0;
                 ++currentFrame.X2;
                 if (currentFrame.X2 >= spriteSize.X2)
@@ -174,6 +180,28 @@ namespace LOtE
         {
             switch (Direction)
             {
+                //для ходьбы по диагонали //правил код CreaHaGame \/
+                case Direction.LeftUp:
+                    X -= speed;
+                    Y -= speed;
+                    effect = SpriteEffects.FlipHorizontally;
+                    break;
+                case Direction.UpRight:
+                    Y -= speed;
+                    X += speed;
+                    effect = SpriteEffects.None;
+                    break;
+                case Direction.RightDown:
+                    Y += speed;
+                    X += speed;
+                    effect = SpriteEffects.None;
+                    break;
+                case Direction.DownLeft:
+                    Y += speed;
+                    X -= speed;
+                    effect = SpriteEffects.FlipHorizontally;
+                    break;// //правил код CreaHaGame         /\
+
                 case Direction.Left:
                     X -= speed;
                     effect = SpriteEffects.FlipHorizontally;
@@ -186,14 +214,15 @@ namespace LOtE
                     effect = SpriteEffects.None;
                     break;
                 case Direction.Down:
-                    Y += speed; 
+                    Y += speed;
                     break;
                 case Direction.Stop:
                     Y = Y;
                     X = X;
                     break;
             }
-                
+
+
         }
     }
 }
