@@ -130,7 +130,7 @@ namespace LOtE
             if (currentTime > period)
             {
                 currentTime -= period;
-                pers.Animation();
+                pers.Animation(3,1,1);
             }
 
             pers.Move(3);

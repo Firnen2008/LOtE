@@ -17,6 +17,7 @@ namespace LOtE
         public Line currentFrame;
         public Line spriteSize;
         private bool animationFlag = false;
+        private int animationaccount = 0;
 
         public Line CurrentFrame
         {
@@ -133,34 +134,26 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
-        public void Animation(/*int size, int start, int row*/)
+        public void Animation(int size, int start, int row)
         {
-            //animationFlag = true;
-            ////if (animationFlag)
-            ////{
-            ////    switch (PersDirection)
-            ////    {
-            ////        case PersDirection.Standart:
-            ////            currentFrame.X1 = 6;
-            ////            animationFlag = true;
-            ////            break;
-            ////        case PersDirection.Standart:
-            ////            currentFrame.X1 = 6;
-            ////            animationFlag = true;
-            ////            break;
-            ////    }
-            ////}
-            //currentFrame.X1 = start;
-            //currentFrame.X2 = row;
+            if (animationFlag = false)
+            {
+                currentFrame.X1 = start-1;
+                currentFrame.X2 = row;
+                animationFlag = true;
+            }
             ++currentFrame.X1;
+            ++animationaccount;
+            if (animationaccount >= size)
+            {
+                currentFrame.X1 = start-1;
+                animationaccount = 0;
+                animationFlag = false;
+            }
             if (currentFrame.X1 >= spriteSize.X1)
             {
-                //if ((spriteSize.X1 - start) > size)
-                //{
-                //    size = spriteSize.X1 - start;
-                //}
                 ////animationFlag = false;
-                currentFrame.X1 = 0;
+                currentFrame.X1 = start-1;
                 ++currentFrame.X2;
                 if (currentFrame.X2 >= spriteSize.X2)
                     currentFrame.X2 = 0;
