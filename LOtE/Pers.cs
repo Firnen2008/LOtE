@@ -134,7 +134,7 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
-        public void Animation(int size, int start, int row)
+        public void Animation(int size, int start, int row) //Анимация проигрывания файлов
         {
             if (animationFlag = false)
             {
