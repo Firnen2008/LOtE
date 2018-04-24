@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Container.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="Equipment.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="PersDirection.cs" />

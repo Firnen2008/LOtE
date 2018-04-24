@@ -152,7 +152,6 @@ namespace LOtE
             }
             if (currentFrame.X1 >= spriteSize.X1)
             {
-                ////animationFlag = false;
                 currentFrame.X1 = start-1;
                 ++currentFrame.X2;
                 if (currentFrame.X2 >= spriteSize.X2)
