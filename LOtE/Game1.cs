@@ -53,8 +53,6 @@ namespace LOtE
         {
             base.Initialize();
             pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1));
-            itme = new Itme("ffff", 5);
-            pers.Rectangle
         }
 
         protected override void LoadContent()

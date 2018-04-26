@@ -15,6 +15,8 @@ namespace LOtE
         protected Texture2D texture;
         private Rectangle rectangle;
         private Container container;
+        private SpriteFont font;
+        
         public Rectangle Rectangle
         {
             get
@@ -36,6 +38,10 @@ namespace LOtE
             {
                 texture = value;
             }
+        }
+        public void DrowGui(GameTime gametime, SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw( Texture, Rectangle, Color.Gray );
         }
 
     }

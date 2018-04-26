@@ -80,5 +80,6 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
+
     }
 }
