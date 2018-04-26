@@ -7,9 +7,6 @@ namespace LOtE
 {
     class Pers
     {
-        //public Texture2D Texture { get; set; }
-
-        //protected Texture2D texture;
         protected Texture2D texture;
         private int frameWidth;
         private int frameHeight;
@@ -134,7 +131,13 @@ namespace LOtE
             X = position.X;
             Y = position.Y;
         }
-        public void Animation(int size, int start, int row) //Анимация проигрывания файлов
+        ///<summary>
+        ///Анимация проигрывания спрайтов персонажа
+        ///</summary>
+        ///<param name="size">количество спрайтов</param>
+        ///<param name="start">столбец</param>
+        ///<param name="row">строка</param>
+        public void Animation(int size, int start, int row) 
         {
             if (animationFlag = false)
             {
@@ -158,21 +161,30 @@ namespace LOtE
                     currentFrame.X2 = 0;
             }
         }
+        ///<summary>
+        ///Задание координат X,Y
+        ///</summary>
         public void SetPosition(Position position)
         {
             X = position.X;
             Y = position.Y;
         }
+        ///<summary>
+        ///Метод отрисовки персонажа
+        ///</summary>
         public void Draw(GameTime gametime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture, rectangle, Color.White);
         }
-
+        ///<summary>
+        ///Метод управление движением персонажа с помощью wasd
+        ///</summary>
+        ///Правил код CreaHaGame
         public void Move(int speed)
         {
             switch (Direction)
             {
-                //для ходьбы по диагонали //правил код CreaHaGame \/
+                //для ходьбы по диагонали
                 case Direction.LeftUp:
                     X -= speed;
                     Y -= speed;
@@ -192,7 +204,7 @@ namespace LOtE
                     Y += speed;
                     X -= speed;
                     effect = SpriteEffects.FlipHorizontally;
-                    break;// //правил код CreaHaGame         /\
+                    break; 
 
                 case Direction.Left:
                     X -= speed;

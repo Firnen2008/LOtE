@@ -18,6 +18,9 @@ namespace LOtE
             X = x;
             Y = y;
         }
+        ///<summary>
+        ///Статический метод для генерации случайных координат
+        ///</summary>
         public static Position ComputePosition(Container container)
         {
             return new Position(r.Next(container.Width.X1, container.Width.X2),

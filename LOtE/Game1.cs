@@ -17,6 +17,8 @@ namespace LOtE
         KeyboardState crrKS;
         KeyboardState preKS;
 
+        Itme itme;
+
         int currentTime = 0; // сколько времени прошло
         int period = 50; // период обновления в миллисекундах
 
@@ -44,7 +46,6 @@ namespace LOtE
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            //TargetElapsedTime = new TimeSpan(0, 0, 0, 0, 400);
             cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10));
         }
 
@@ -52,6 +53,8 @@ namespace LOtE
         {
             base.Initialize();
             pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1));
+            itme = new Itme("ffff", 5);
+            pers.Rectangle
         }
 
         protected override void LoadContent()
@@ -71,41 +74,35 @@ namespace LOtE
             currentTime += gameTime.ElapsedGameTime.Milliseconds;
 
             crrKS = Keyboard.GetState();
-
+            //управление движением персонажа
             if (preKS.IsKeyUp(Keys.S) && preKS.IsKeyUp(Keys.A) && preKS.IsKeyUp(Keys.D) && preKS.IsKeyUp(Keys.W))//Down , Left , Right , Up
             {
                 pers.Direction = Direction.Stop;
                 pers.PersDirection = PersDirection.Standart;
             }
 
-            //стоит сделать так , чтобы перс мог ходить по диагонали //правил код CreaHaGame                    \/
             if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))//left && Up
             {
-                //code...
                 pers.Direction = Direction.LeftUp;
                 pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.W) && Keyboard.GetState().IsKeyDown(Keys.D))//Up && right
             {
-                //code...
                 pers.Direction = Direction.UpRight;
                 pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))//right && down
             {
-                //code...
                 pers.Direction = Direction.RightDown;
                 pers.PersDirection = PersDirection.Run;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.S) && Keyboard.GetState().IsKeyDown(Keys.A))//down && left
             {
-                //code...
                 pers.Direction = Direction.DownLeft;
                 pers.PersDirection = PersDirection.Run;
             }
 
-            //поменял местами с верхней проеркой 
-            //лол , только так работает , если только проверять букву А , то if перехватывает всегда и по деагонали не идет перс
+
             if (Keyboard.GetState().IsKeyDown(Keys.A) && !(Keyboard.GetState().IsKeyDown(Keys.W)) && !(Keyboard.GetState().IsKeyDown(Keys.S)))
             {
                 pers.Direction = Direction.Left;
@@ -125,14 +122,15 @@ namespace LOtE
             {
                 pers.Direction = Direction.Down;
                 pers.PersDirection = PersDirection.Run;
-            }//правил код CreaHaGame --- --- --- --- --- --- ---     /\       ======         ======        /\
+            }
 
+            //Анимация персонажа
             if (currentTime > period)
             {
                 currentTime -= period;
                 pers.Animation(3,1,1);
             }
-
+            //Скорость передвижения персонажа
             pers.Move(3);
 
             preKS = crrKS;
@@ -145,7 +143,7 @@ namespace LOtE
 
             spriteBatch.Begin();
             //spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
-
+        //Отрисовка персонажа     
             spriteBatch.Draw(pers.Texture, new Vector2(pers.X, pers.Y),
    new Rectangle(pers.currentFrame.X1 * pers.FrameWidth,
        pers.currentFrame.X2 * pers.FrameHeight,
