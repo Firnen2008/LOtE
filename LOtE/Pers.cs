@@ -139,7 +139,7 @@ namespace LOtE
         ///<param name="row">строка</param>
         public void Animation(int size, int start, int row) 
         {
-            if (animationFlag = false)
+            if (animationFlag == false)
             {
                 currentFrame.X1 = start-1;
                 currentFrame.X2 = row;

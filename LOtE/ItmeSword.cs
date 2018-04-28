@@ -8,9 +8,6 @@ namespace LOtE
 {
     class ItmeSword : Itme
     {
-        public ItmeSword(string A, int B) : base(A, B)
-        {
-        }
         
     }
 }

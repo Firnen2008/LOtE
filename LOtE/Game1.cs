@@ -46,7 +46,8 @@ namespace LOtE
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10));
+            cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0);
+            
         }
 
         protected override void Initialize()
