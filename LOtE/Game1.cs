@@ -17,8 +17,6 @@ namespace LOtE
         KeyboardState crrKS;
         KeyboardState preKS;
 
-        Itme itme;
-
         int currentTime = 0; // сколько времени прошло
         int period = 50; // период обновления в миллисекундах
 

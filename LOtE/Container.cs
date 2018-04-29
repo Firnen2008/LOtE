@@ -7,13 +7,15 @@ using System.Threading.Tasks;
 namespace LOtE
 {
     class Container
-    {
+    {   //Координаты для смещения контейнера
         private int x;
         private int y;
 
+        //Длинна и ширина контейнера
         public Line Width { get; set; }
         public Line Height { get; set; }
 
+        //Свойства задания смещения контейнера
         public int X
         {
             get

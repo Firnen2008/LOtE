@@ -75,14 +75,26 @@ namespace LOtE
             }
         }
 
+        /// <summary>
+        /// Установка текстуры Gui вне конструктора
+        /// </summary>
         public void SetTexture(Texture2D texture)
         {
             Texture = texture;
         }
-        public void SetFont(SpriteFont font)
+
+        /// <summary>
+        /// Установка текстуры шрифта и текста Gui вне конструктора
+        /// </summary>
+        public void SetFont(SpriteFont font , string text)
         {
             Font = font;
+            Text = text;
         }
+
+        /// <summary>
+        /// Метод отрисовки Gui (включает отрисовку текстуры и текста относительно GuiContainer)
+        /// </summary>
         public void DrowGui(GameTime gametime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw( Texture, Rectangle, Color.Gray );
