@@ -65,73 +65,83 @@ namespace LOtE
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            { Exit(); }
+            try
+            {
+                if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                { Exit(); }
 
-            currentTime += gameTime.ElapsedGameTime.Milliseconds;
+                currentTime += gameTime.ElapsedGameTime.Milliseconds;
 
-            crrKS = Keyboard.GetState();
-            //управление движением персонажа
-            if (preKS.IsKeyUp(Keys.S) && preKS.IsKeyUp(Keys.A) && preKS.IsKeyUp(Keys.D) && preKS.IsKeyUp(Keys.W))//Down , Left , Right , Up
-            {
-                pers.Direction = Direction.Stop;
-                pers.PersDirection = PersDirection.Standart;
-            }
+                crrKS = Keyboard.GetState();
+                //управление движением персонажа
+                if (preKS.IsKeyUp(Keys.S) && preKS.IsKeyUp(Keys.A) && preKS.IsKeyUp(Keys.D) && preKS.IsKeyUp(Keys.W))//Down , Left , Right , Up
+                {
+                    pers.Direction = Direction.Stop;
+                    pers.PersDirection = PersDirection.Standart;
+                }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))//left && Up
-            {
-                pers.Direction = Direction.LeftUp;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.W) && Keyboard.GetState().IsKeyDown(Keys.D))//Up && right
-            {
-                pers.Direction = Direction.UpRight;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))//right && down
-            {
-                pers.Direction = Direction.RightDown;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.S) && Keyboard.GetState().IsKeyDown(Keys.A))//down && left
-            {
-                pers.Direction = Direction.DownLeft;
-                pers.PersDirection = PersDirection.Run;
-            }
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && Keyboard.GetState().IsKeyDown(Keys.W))//left && Up
+                {
+                    pers.Direction = Direction.LeftUp;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.W) && Keyboard.GetState().IsKeyDown(Keys.D))//Up && right
+                {
+                    pers.Direction = Direction.UpRight;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.D) && Keyboard.GetState().IsKeyDown(Keys.S))//right && down
+                {
+                    pers.Direction = Direction.RightDown;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.S) && Keyboard.GetState().IsKeyDown(Keys.A))//down && left
+                {
+                    pers.Direction = Direction.DownLeft;
+                    pers.PersDirection = PersDirection.Run;
+                }
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A) && !(Keyboard.GetState().IsKeyDown(Keys.W)) && !(Keyboard.GetState().IsKeyDown(Keys.S)))
-            {
-                pers.Direction = Direction.Left;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D) && !(Keyboard.GetState().IsKeyDown(Keys.S)) && !(Keyboard.GetState().IsKeyDown(Keys.W)))
-            {
-                pers.Direction = Direction.Right;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.W) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
-            {
-                pers.Direction = Direction.Up;
-                pers.PersDirection = PersDirection.Run;
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.S) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
-            {
-                pers.Direction = Direction.Down;
-                pers.PersDirection = PersDirection.Run;
-            }
+                if (Keyboard.GetState().IsKeyDown(Keys.A) && !(Keyboard.GetState().IsKeyDown(Keys.W)) && !(Keyboard.GetState().IsKeyDown(Keys.S)))
+                {
+                    pers.Direction = Direction.Left;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.D) && !(Keyboard.GetState().IsKeyDown(Keys.S)) && !(Keyboard.GetState().IsKeyDown(Keys.W)))
+                {
+                    pers.Direction = Direction.Right;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.W) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
+                {
+                    pers.Direction = Direction.Up;
+                    pers.PersDirection = PersDirection.Run;
+                }
+                if (Keyboard.GetState().IsKeyDown(Keys.S) && !(Keyboard.GetState().IsKeyDown(Keys.A)) && !(Keyboard.GetState().IsKeyDown(Keys.D)))
+                {
+                    pers.Direction = Direction.Down;
+                    pers.PersDirection = PersDirection.Run;
+                }
 
-            //Анимация персонажа
-            if (currentTime > period)
-            {
-                currentTime -= period;
-                pers.Animation(3,1,1);
-            }
-            //Скорость передвижения персонажа
-            pers.Move(3);
+                //Анимация персонажа
+                if (currentTime > period)
+                {
+                    currentTime -= period;
+                    pers.Animation(3, 1, 1);
+                }
+                //Скорость передвижения персонажа
+                pers.Move(3);
 
-            preKS = crrKS;
-            base.Update(gameTime);
+                preKS = crrKS;
+                base.Update(gameTime);
+
+            }
+            catch (Exception msg)
+            {
+                Log.Write(msg);                      //Запись в лог
+                Console.WriteLine(msg.ToString());   //Вывод в консоль
+                throw;
+            }
         }
 
         protected override void Draw(GameTime gameTime)

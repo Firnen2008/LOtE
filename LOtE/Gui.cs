@@ -15,9 +15,64 @@ namespace LOtE
         protected Texture2D texture;
         private Rectangle rectangle;
         private SpriteFont font;
+        private int xForFont;
+        private int yForFont;
 
         public Container GuiContainer { get; set; }
         public string Text { get; set; }
+
+        /// <summary>
+        /// Координаты размещения шрифта в GuiContainer
+        /// </summary>
+        public int XForFont
+        {
+            get
+            {
+                return xForFont;
+            }
+            set
+            {
+                xForFont = (((GuiContainer.Width.X2 - GuiContainer.Width.X1) / 2) + GuiContainer.Width.X1) + value;
+            }
+        }
+        public int YForFont
+        {
+            get
+            {
+                return yForFont;
+            }
+            set
+            {
+                yForFont = (((GuiContainer.Height.X2 - GuiContainer.Height.X1) / 2) + GuiContainer.Height.X1) + value;
+            }
+        }
+
+        /// <summary>
+        /// Координаты размещения текстуры в GuiContainer
+        /// </summary>
+        public int XForTexture
+        {
+            get
+            {
+                return rectangle.X;
+            }
+            set
+            {
+                rectangle.X = (((GuiContainer.Width.X2 - GuiContainer.Width.X1) / 2) + GuiContainer.Width.X1) + value;
+            }
+        }
+
+        public int YForTexture
+        {
+            get
+            {
+                return rectangle.Y;
+            }
+            set
+            {
+                rectangle.Y = (((GuiContainer.Height.X2 - GuiContainer.Height.X1) / 2) + GuiContainer.Height.X1) + value;
+            }
+        }
         public SpriteFont Font
         {
             get
@@ -51,29 +106,6 @@ namespace LOtE
                 rectangle = value;
             }
         }
-        public int X
-        {
-            get
-            {
-                return rectangle.X;
-            }
-            set
-            {
-                rectangle.X = value;
-            }
-        }
-
-        public int Y
-        {
-            get
-            {
-                return rectangle.Y;
-            }
-            set
-            {
-                rectangle.Y = value;
-            }
-        }
 
         /// <summary>
         /// Установка текстуры Gui вне конструктора
@@ -82,6 +114,7 @@ namespace LOtE
         {
             Texture = texture;
         }
+
 
         /// <summary>
         /// Установка текстуры шрифта и текста Gui вне конструктора
@@ -98,7 +131,7 @@ namespace LOtE
         public void DrowGui(GameTime gametime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw( Texture, Rectangle, Color.Gray );
-            spriteBatch.DrawString(Font, Text, new Vector2((float)(GuiContainer.Width.X2 - GuiContainer.Width.X1) / 2, ((float)(GuiContainer.Height.X2 - GuiContainer.Height.X1)) / 2), Color.White);
+            spriteBatch.DrawString(Font, Text, new Vector2((float)XForFont, (float)YForFont), Color.White);
         }
 
     }

@@ -48,6 +48,7 @@
     <Compile Include="Itme.cs" />
     <Compile Include="ItmeSword.cs" />
     <Compile Include="Line.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="PersDirection.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
