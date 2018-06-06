@@ -16,8 +16,6 @@ namespace LOtE
         public String Name { get; set; }
         //ID
         public int ID { get; set; }
-        //Прочность
-        public int strength { get; set; }
         //Текстура
         protected Texture2D texture;
         //Флаг на выпадние в мир
@@ -68,13 +66,14 @@ namespace LOtE
                 texture = value;
             }
         }
-        //public Itme(Texture2D texture, Rectangle rectangle, Position position)
-        //{
-        //    Texture = texture;
-        //    this.rectangle = rectangle;
-        //    X = position.X;
-        //    Y = position.Y;
-        //}
+        public Itme(int id, Texture2D texture, Rectangle rectangle, String name)
+        {
+            Texture = texture;
+            this.rectangle = Rectangle;
+            ID = id;
+            Name = name;
+        }
+        public Itme() { }
         public void SetPosition(Position position)
         {
             X = position.X;

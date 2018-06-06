@@ -51,7 +51,7 @@ namespace LOtE
         protected override void Initialize()
         {
             base.Initialize();
-            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1));
+            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 64, 64, new Line(0, 0), new Line(9, 1));
         }
 
         protected override void LoadContent()
@@ -127,7 +127,7 @@ namespace LOtE
                 if (currentTime > period)
                 {
                     currentTime -= period;
-                    pers.Animation(3, 1, 1);
+                    pers.Animation(9, 1, 1);
                 }
                 //Скорость передвижения персонажа
                 pers.Move(3);
