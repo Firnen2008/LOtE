@@ -74,7 +74,7 @@ namespace LOtE
                 texture = value;
             }
         }
-        public Direction Direction { get; set; }
+        public States Direction { get; set; }
         public PersDirection PersDirection { get; set; }
 
         private Rectangle rectangle;
@@ -185,42 +185,42 @@ namespace LOtE
             switch (Direction)
             {
                 //для ходьбы по диагонали
-                case Direction.LeftUp:
+                case States.LeftUp:
                     X -= speed;
                     Y -= speed;
                     effect = SpriteEffects.FlipHorizontally;
                     break;
-                case Direction.UpRight:
+                case States.UpRight:
                     Y -= speed;
                     X += speed;
                     effect = SpriteEffects.None;
                     break;
-                case Direction.RightDown:
+                case States.RightDown:
                     Y += speed;
                     X += speed;
                     effect = SpriteEffects.None;
                     break;
-                case Direction.DownLeft:
+                case States.DownLeft:
                     Y += speed;
                     X -= speed;
                     effect = SpriteEffects.FlipHorizontally;
                     break; 
 
-                case Direction.Left:
+                case States.Left:
                     X -= speed;
                     effect = SpriteEffects.FlipHorizontally;
                     break;
-                case Direction.Up:
+                case States.Up:
                     Y -= speed;
                     break;
-                case Direction.Right:
+                case States.Right:
                     X += speed;
                     effect = SpriteEffects.None;
                     break;
-                case Direction.Down:
+                case States.Down:
                     Y += speed;
                     break;
-                case Direction.Stop:
+                case States.Stop:
                     Y = Y;
                     X = X;
                     break;

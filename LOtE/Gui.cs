@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -13,66 +12,17 @@ namespace LOtE
     class Gui
     {
         protected Texture2D texture;
-        private Rectangle rectangle;
+        private Rectangle rectangleTexture;
         private SpriteFont font;
-        private int xForFont;
-        private int yForFont;
 
         public Container GuiContainer { get; set; }
         public string Text { get; set; }
-
-        /// <summary>
-        /// Координаты размещения шрифта в GuiContainer
-        /// </summary>
-        public int XForFont
-        {
-            get
-            {
-                return xForFont;
-            }
-            set
-            {
-                xForFont = (((GuiContainer.Width.X2 - GuiContainer.Width.X1) / 2) + GuiContainer.Width.X1) + value;
-            }
-        }
-        public int YForFont
-        {
-            get
-            {
-                return yForFont;
-            }
-            set
-            {
-                yForFont = (((GuiContainer.Height.X2 - GuiContainer.Height.X1) / 2) + GuiContainer.Height.X1) + value;
-            }
-        }
+        public Vector2 cordFont;
 
         /// <summary>
         /// Координаты размещения текстуры в GuiContainer
         /// </summary>
-        public int XForTexture
-        {
-            get
-            {
-                return rectangle.X;
-            }
-            set
-            {
-                rectangle.X = (((GuiContainer.Width.X2 - GuiContainer.Width.X1) / 2) + GuiContainer.Width.X1) + value;
-            }
-        }
 
-        public int YForTexture
-        {
-            get
-            {
-                return rectangle.Y;
-            }
-            set
-            {
-                rectangle.Y = (((GuiContainer.Height.X2 - GuiContainer.Height.X1) / 2) + GuiContainer.Height.X1) + value;
-            }
-        }
         public SpriteFont Font
         {
             get
@@ -95,15 +45,15 @@ namespace LOtE
                 texture = value;
             }
         }
-        public Rectangle Rectangle
+        public Rectangle RectangleTexture
         {
             get
             {
-                return rectangle;
+                return rectangleTexture;
             }
             set
             {
-                rectangle = value;
+                rectangleTexture = value;
             }
         }
 
@@ -114,24 +64,55 @@ namespace LOtE
         {
             Texture = texture;
         }
-
-
         /// <summary>
         /// Установка текстуры шрифта и текста Gui вне конструктора
         /// </summary>
-        public void SetFont(SpriteFont font , string text)
+        public void SetFont(SpriteFont font, string text)
         {
             Font = font;
             Text = text;
         }
-
+        /// <summary>
+        /// Конструктор для текста и картинки
+        /// </summary>
+        public Gui(Texture2D texture, Container container, int textureX, int textureY, SpriteFont font, string text, int fontX, int fontY)
+        {
+            Texture = texture;
+            GuiContainer = container;
+            rectangleTexture.X = ((((container.Width.X2 - container.Width.X1) / 2) + container.Width.X1) - (container.Width.X2 - container.Width.X1) / 2) + textureX;
+            rectangleTexture.Y = ((((container.Height.X2 - container.Height.X1) / 2) + container.Height.X1) - (container.Height.X2 - container.Height.X1) / 2) + textureY;
+            rectangleTexture.Width = container.Width.X2 - container.Width.X1;
+            rectangleTexture.Height = container.Height.X2 - container.Height.X1;
+            Font = font;
+            Text = text;
+            cordFont.X = ((((container.Width.X2 - container.Width.X1) / 2) + container.Width.X1) - (container.Width.X2 - container.Width.X1) / 2) + fontX;
+            cordFont.Y = ((((container.Height.X2 - container.Height.X1) / 2) + container.Height.X1) - (container.Height.X2 - container.Height.X1) / 2) + fontY;
+        }
+        /// <summary>
+        /// Конструктор для текста
+        /// </summary>
+        public Gui(Container container, SpriteFont font, string text, int fontX, int fontY)//для отрисовки только текста 
+        {
+            GuiContainer = container;
+            Font = font;
+            Text = text;
+            cordFont.X = ((((container.Width.X2 - container.Width.X1) / 2) + container.Width.X1) - (container.Width.X2 - container.Width.X1) / 2) + fontX;
+            cordFont.Y = ((((container.Height.X2 - container.Height.X1) / 2) + container.Height.X1) - (container.Height.X2 - container.Height.X1) / 2) + fontY;
+        }
         /// <summary>
         /// Метод отрисовки Gui (включает отрисовку текстуры и текста относительно GuiContainer)
         /// </summary>
-        public void DrowGui(GameTime gametime, SpriteBatch spriteBatch)
+        public void DrowMainGui(GameTime gametime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw( Texture, Rectangle, Color.Gray );
-            spriteBatch.DrawString(Font, Text, new Vector2((float)XForFont, (float)YForFont), Color.White);
+            spriteBatch.Draw(Texture, RectangleTexture, Color.Gray);
+            spriteBatch.DrawString(Font, Text, cordFont, Color.White);
+        }
+        /// <summary>
+        /// Метод отрисовки Текста без картинки (включает отрисовку текста относительно GuiContainer)
+        /// </summary>
+        public void DrowTGui(GameTime gametime, SpriteBatch spriteBatch)
+        {
+            spriteBatch.DrawString(Font, Text, cordFont, Color.White);
         }
 
     }

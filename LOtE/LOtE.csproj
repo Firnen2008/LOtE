@@ -42,15 +42,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
-    <Compile Include="DamageType.cs" />
-    <Compile Include="Direction.cs" />
+    <Compile Include="States.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Gui.cs" />
     <Compile Include="Itme.cs" />
     <Compile Include="ItmeSword.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Log.cs" />
-    <Compile Include="PersDirection.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LOtE
 {
-    enum Direction
+    enum States
     {
         // ходьба по прямой
         Left,
@@ -20,6 +20,19 @@ namespace LOtE
         DownLeft,
         // стоп
         Stop
+    }
+    enum DamageType
+    {
+        magic,
+        physical,
+        pure
+    }
+    enum PersDirection
+    {
+        Run,
+        Atact,
+        ShieldDefend,
+        Standart
     }
 }
 

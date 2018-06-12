@@ -20,6 +20,7 @@ namespace LOtE
         {
             Strength = strength;
             Damage = damage;
-            TypeOfDamage = typeOfDamage;        }
+            TypeOfDamage = typeOfDamage;
+        }
     }
 }

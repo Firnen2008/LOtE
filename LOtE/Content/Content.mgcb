@@ -61,3 +61,10 @@
 /processorParam:TextureFormat=Color
 /build:images/pers.png
 
+#begin fonts/Main.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/Main.spritefont
+

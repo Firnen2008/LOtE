@@ -49,6 +49,7 @@ namespace LOtE
             Height = height;
             X = x;
             Y = y;
+   
         }
     }
 }
