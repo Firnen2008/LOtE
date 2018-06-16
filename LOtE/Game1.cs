@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Data.SQLite;
 using System;
+using System.IO;
 
 namespace LOtE
 {
@@ -24,6 +26,7 @@ namespace LOtE
 
         int currentTime = 0; // сколько времени прошло
         int period = 300; // период обновления в миллисекундах
+        int idPers=1;
 
 
         public Game1()
@@ -31,15 +34,30 @@ namespace LOtE
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0);
-
         }
 
         protected override void Initialize()
         {
             base.Initialize();
-            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1));
+            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1),1);
             MainGui = new Gui(Content.Load<Texture2D>("images/pers"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(200, graphics.PreferredBackBufferHeight - 200), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
-            //TGui = new Gui(new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0), Content.Load<SpriteFont>(@"fonts/Main"), "FPS", 0, 0);
+                                                                                                                                                                                                                                                                         //TGui = new Gui(new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0), Content.Load<SpriteFont>(@"fonts/Main"), "FPS", 0, 0);
+            const string dbPath = @"gamedb.db";
+            if (!File.Exists(dbPath))
+            {
+                SQLiteConnection.CreateFile(dbPath);
+                SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
+                SQLiteCommand createTablePersinfo = new SQLiteCommand("CREATE TABLE persinfo(id INTEGER NOT NULL, coordinates TEXT UNIQUE NOT NULL, name TEXT UNIQUE NOT NULL, PRIMARY KEY(id));", dbConnection);
+                SQLiteCommand createTablePersitems = new SQLiteCommand("CREATE TABLE persitems(" + pers.textID + "TEXT NOT NULL);", dbConnection);
+                SQLiteCommand createLineNull = new SQLiteCommand("INSERT INTO persinfo VALUES (0, 0, 0)", dbConnection);
+                SQLiteCommand comandUpdateCommand = new SQLiteCommand("UPDATE persinfo SET id = " + pers.ID + "; UPDATE persinfo SET coordinates = '0:0:0';  UPDATE persinfo SET name = 'Firnen'", dbConnection);
+                dbConnection.Open();
+                createTablePersinfo.ExecuteNonQuery();
+                createTablePersitems.ExecuteNonQuery();
+                createLineNull.ExecuteNonQuery();
+                comandUpdateCommand.ExecuteNonQuery();
+                dbConnection.Close();
+            }
         }
 
         protected override void LoadContent()
@@ -58,6 +76,7 @@ namespace LOtE
         {
             try
             {
+
                 if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 { Exit(); }
 

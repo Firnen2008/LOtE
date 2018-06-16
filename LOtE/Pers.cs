@@ -13,6 +13,8 @@ namespace LOtE
         public SpriteEffects effect;
         public Line currentFrame;
         public Line spriteSize;
+        public int ID;
+        public string textID;
         private bool animationFlag = false;
         private int animationaccount = 0;
 
@@ -115,7 +117,7 @@ namespace LOtE
                 rectangle.Y = value;
             }
         }
-        public Pers(Texture2D texture, Rectangle rectangle, int frameWidth, int frameHeight, Line currentFrame, Line spriteSize)
+        public Pers(Texture2D texture, Rectangle rectangle, int frameWidth, int frameHeight, Line currentFrame, Line spriteSize, int id)
         {
             Texture = texture;
             this.rectangle = rectangle;
@@ -123,7 +125,9 @@ namespace LOtE
             FrameHeight = frameHeight;
             CurrentFrame = currentFrame;
             SpriteSize = spriteSize;
-        }
+            ID = id;
+            textID = "pers" + ID;
+    }
         public Pers(Texture2D texture, Rectangle rectangle, Position position)
         {
             Texture = texture;
