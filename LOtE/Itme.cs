@@ -12,6 +12,8 @@ namespace LOtE
 {
     class Itme
     {
+        private int number;
+        public bool StuckOrNot;
         //Имя вещи
         public String Name { get; set; }
         //ID
@@ -67,11 +69,28 @@ namespace LOtE
                 texture = value;
             }
         }
-        public Itme(Texture2D texture, Rectangle rectangle, String name)
+        public int Number
+        {
+            get
+            {
+                return number;
+            }
+            set
+            {
+                if (StuckOrNot == true)
+                {
+                    if ((number + value) < 64)
+                        number = value;
+                }
+                else number = 1;
+            }
+        }
+        public Itme(Texture2D texture, Rectangle rectangle, String name, int number)
         {
             Texture = texture;
             this.rectangle = Rectangle;
             Name = name;
+            Number = number;
         }
         public Itme() { }
         public void SetPosition(Position position)

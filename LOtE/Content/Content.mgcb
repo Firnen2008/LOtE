@@ -49,6 +49,13 @@
 /processorParam:TextureFormat=Color
 /build:images/shield.png
 
+#begin fonts/Main.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/Main.spritefont
+
 #begin images/pers.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -60,11 +67,4 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:images/pers.png
-
-#begin fonts/Main.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:fonts/Main.spritefont
 

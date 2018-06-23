@@ -12,7 +12,7 @@ namespace LOtE
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        Gui MainGui, TGui;
+        Gui MainGui;
 
         bool indicator1 = false;
 
@@ -26,7 +26,6 @@ namespace LOtE
 
         int currentTime = 0; // сколько времени прошло
         int period = 300; // период обновления в миллисекундах
-        int idPers=1;
 
 
         public Game1()
@@ -39,23 +38,24 @@ namespace LOtE
         protected override void Initialize()
         {
             base.Initialize();
-            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 149, 150, new Line(0, 0), new Line(8, 1),1);
+            pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 64, 64, new Line(0, 0), new Line(9, 1),1);
             MainGui = new Gui(Content.Load<Texture2D>("images/pers"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(200, graphics.PreferredBackBufferHeight - 200), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
-                                                                                                                                                                                                                                                                         //TGui = new Gui(new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0), Content.Load<SpriteFont>(@"fonts/Main"), "FPS", 0, 0);
             const string dbPath = @"gamedb.db";
             if (!File.Exists(dbPath))
             {
                 SQLiteConnection.CreateFile(dbPath);
                 SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
                 SQLiteCommand createTablePersinfo = new SQLiteCommand("CREATE TABLE persinfo(id INTEGER NOT NULL, coordinates TEXT UNIQUE NOT NULL, name TEXT UNIQUE NOT NULL, PRIMARY KEY(id));", dbConnection);
-                SQLiteCommand createTablePersitems = new SQLiteCommand("CREATE TABLE persitems(" + pers.textID + " TEXT NOT NULL);", dbConnection);
+                SQLiteCommand createTablePersitems = new SQLiteCommand("CREATE TABLE persitems(persid INTEGER, itemid INTEGER, slotid INTEGER, stuck INTEGER, strength INTEGER, damage TEXT, typeofdamage TEXT);", dbConnection);
                 SQLiteCommand createLineNull = new SQLiteCommand("INSERT INTO persinfo VALUES (0, 0, 0)", dbConnection);
                 SQLiteCommand comandUpdateCommand = new SQLiteCommand("UPDATE persinfo SET id = " + pers.ID + "; UPDATE persinfo SET coordinates = '0:0:0';  UPDATE persinfo SET name = 'Firnen'", dbConnection);
+                SQLiteCommand createLineItme = new SQLiteCommand("INSERT INTO persitems VALUES (1, 1, 5, 64, 1200, '2:5', 'magik')", dbConnection);
                 dbConnection.Open();
                 createTablePersinfo.ExecuteNonQuery();
                 createTablePersitems.ExecuteNonQuery();
                 createLineNull.ExecuteNonQuery();
                 comandUpdateCommand.ExecuteNonQuery();
+                createLineItme.ExecuteNonQuery();
                 dbConnection.Close();
             }
         }
@@ -135,10 +135,10 @@ namespace LOtE
 
 
                 //Анимация персонажа
-                if (currentTime > period)
+                if (currentTime > period-100)
                 {
-                    currentTime -= period;
-                    pers.Animation(3, 1, 1);
+                    currentTime -= period-100;
+                    pers.Animation(9, 1, 1);
                 }
                 //Скорость передвижения персонажа
                 pers.Move(3);

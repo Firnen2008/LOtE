@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
+    <Compile Include="SQL.cs" />
     <Compile Include="States.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Gui.cs" />
