@@ -47,15 +47,9 @@ namespace LOtE
                 SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
                 SQLiteCommand createTablePersinfo = new SQLiteCommand("CREATE TABLE persinfo(id INTEGER NOT NULL, coordinates TEXT UNIQUE NOT NULL, name TEXT UNIQUE NOT NULL, PRIMARY KEY(id));", dbConnection);
                 SQLiteCommand createTablePersitems = new SQLiteCommand("CREATE TABLE persitems(persid INTEGER, itemid INTEGER, slotid INTEGER, stuck INTEGER, strength INTEGER, damage TEXT, typeofdamage TEXT);", dbConnection);
-                SQLiteCommand createLineNull = new SQLiteCommand("INSERT INTO persinfo VALUES (0, 0, 0)", dbConnection);
-                SQLiteCommand comandUpdateCommand = new SQLiteCommand("UPDATE persinfo SET id = " + pers.ID + "; UPDATE persinfo SET coordinates = '0:0:0';  UPDATE persinfo SET name = 'Firnen'", dbConnection);
-                SQLiteCommand createLineItme = new SQLiteCommand("INSERT INTO persitems VALUES (1, 1, 5, 64, 1200, '2:5', 'magik')", dbConnection);
                 dbConnection.Open();
                 createTablePersinfo.ExecuteNonQuery();
                 createTablePersitems.ExecuteNonQuery();
-                createLineNull.ExecuteNonQuery();
-                comandUpdateCommand.ExecuteNonQuery();
-                createLineItme.ExecuteNonQuery();
                 dbConnection.Close();
             }
         }

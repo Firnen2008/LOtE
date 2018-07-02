@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Container.cs" />
+    <Compile Include="ItmeShield.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="States.cs" />
     <Compile Include="Game1.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pers.cs" />
+    <Compile Include="WoodenShield.cs" />
     <Compile Include="WoodenSword.cs" />
   </ItemGroup>
   <ItemGroup>

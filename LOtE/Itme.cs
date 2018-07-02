@@ -22,7 +22,7 @@ namespace LOtE
         //Текстура
         protected Texture2D texture;
         //Флаг на выпадние в мир
-        public bool DropOrNo { get; set; }
+        public bool DropOrNo { get; set; } = true;
         //Далее описаны координаты и Rectangle при выпадении в мир.
         private Rectangle rectangle;
         public Rectangle Rectangle
@@ -36,6 +36,7 @@ namespace LOtE
                 rectangle = value;
             }
         }
+        
         public int X
         {
             get
@@ -58,6 +59,29 @@ namespace LOtE
                 rectangle.Y = value;
             }
         }
+        public int XWorld
+        {
+            get
+            {
+                return rectangle.X;
+            }
+            set
+            {
+                rectangle.X = value;
+            }
+        }
+        public int YWorld
+        {
+            get
+            {
+                return rectangle.Y;
+            }
+            set
+            {
+                rectangle.Y = value;
+            }
+        }
+
         public Texture2D Texture
         {
             get

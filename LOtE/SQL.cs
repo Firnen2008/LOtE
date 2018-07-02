@@ -41,7 +41,7 @@ namespace LOtE
         }
         static public SQLiteCommand SelectLineItme(string tabl, string colon, SQLiteConnection dbConnection)
         {
-            string сommand = "SELECT * FROM '" + tabl + "'";//" WHERE " + colon + " = ?"
+            string сommand = "SELECT * FROM '" + tabl + "'";
 
             return new SQLiteCommand(сommand, dbConnection);
         }

@@ -8,6 +8,7 @@ namespace LOtE
     class Pers
     {
         protected Texture2D texture;
+        protected Texture2D shieldTexture;
         private int frameWidth;
         private int frameHeight;
         public SpriteEffects effect;
@@ -166,7 +167,7 @@ namespace LOtE
             }
         }
         ///<summary>
-        ///Задание координат X,Y
+        ///Задание координат X,Y персонажа
         ///</summary>
         public void SetPosition(Position position)
         {
@@ -229,7 +230,7 @@ namespace LOtE
                     X = X;
                     break;
             }
-
+//=========================================================================================================================================================
 
         }
     }

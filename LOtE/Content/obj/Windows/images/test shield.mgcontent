@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/git/LOtE/LOtE/Content/images/sword.png</SourceFile>
-  <SourceTime>2018-02-10T01:56:04.8834733+03:00</SourceTime>
-  <DestFile>D:/git/LOtE/LOtE/Content/bin/Windows/images/sword.xnb</DestFile>
-  <DestTime>2018-07-02T22:38:31.5157707+03:00</DestTime>
+  <SourceFile>D:/git/LOtE/LOtE/Content/images/test shield.png</SourceFile>
+  <SourceTime>2018-06-24T14:54:14.1217176+03:00</SourceTime>
+  <DestFile>D:/git/LOtE/LOtE/Content/bin/Windows/images/test shield.xnb</DestFile>
+  <DestTime>2018-07-02T22:38:32.1077713+03:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T18:05:36+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
