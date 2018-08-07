@@ -55,3 +55,4 @@ D:\git\LOtE\LOtE\obj\x86\Debug\LOtE.csprojResolveAssemblyReference.cache
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\fonts\Main.xnb
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\System.Data.SQLite.pdb
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\System.Data.SQLite.xml
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\test shield.xnb

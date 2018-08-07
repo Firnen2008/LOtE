@@ -109,6 +109,7 @@ namespace LOtE
                 else number = 1;
             }
         }
+        // Конструктор предмета
         public Itme(Texture2D texture, Rectangle rectangle, String name, int number)
         {
             Texture = texture;

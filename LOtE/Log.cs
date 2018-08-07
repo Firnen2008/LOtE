@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace LOtE
-{
+{   /// <summary>
+    /// Класс логов
+    /// </summary>
     public class Log
     {
         private static object sync = new object();
