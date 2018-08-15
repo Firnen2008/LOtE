@@ -10,10 +10,11 @@ namespace LOtE
 {
     class WoodenSword : ItmeSword
     {
-        public WoodenSword(int strength, Line damage, DamageType typeOfDamage, Texture2D texture, Rectangle rectangle, string name, int number) : base(strength, damage, typeOfDamage, texture, rectangle, name, number)
+        public WoodenSword(int strength, Line damage, DamageType typeOfDamage, Texture2D texture, Rectangle rectangle, string name, int number, int persID) : base(strength, damage, typeOfDamage, texture, rectangle, name, number, persID)
         {
             ID = 1;
             TextID = "pers" + ID;
+            GlobalID = GlobalIdCreator.CreateID();
         }
     }
 }

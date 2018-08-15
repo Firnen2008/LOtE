@@ -16,7 +16,7 @@ namespace LOtE
         public Line Damage {get; set;} 
         //Вид урона
         public DamageType TypeOfDamage { get;set;}
-        public ItmeSword(int strength, Line damage, DamageType typeOfDamage, Texture2D texture, Rectangle rectangle, String name, int number) : base(texture,  rectangle, name, number)
+        public ItmeSword(int strength, Line damage, DamageType typeOfDamage, Texture2D texture, Rectangle rectangle, String name, int number,int persID) : base( texture,  rectangle, name, number, persID)
         {
             Strength = strength;
             Damage = damage;

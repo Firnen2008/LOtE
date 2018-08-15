@@ -10,7 +10,7 @@ namespace LOtE
 {
     class WoodenShield : ItmeShield
     {
-        public WoodenShield(int strength, float physicalarmor, float magicarmor, int blockchance, float blockpower, Texture2D texture, Rectangle rectangle, String name, int number) : base(strength, physicalarmor, magicarmor, blockchance, blockpower, texture, rectangle, name, number)
+        public WoodenShield(int strength, float physicalarmor, float magicarmor, int blockchance, float blockpower, Texture2D texture, Rectangle rectangle, String name, int number, int persID) : base(strength, physicalarmor, magicarmor, blockchance, blockpower, texture, rectangle, name, number, persID)
         {
             ID = 2;
             TextID = "pers" + ID;

@@ -20,7 +20,7 @@ namespace LOtE
         public int BlockChance { get; set; }
         //сила блока
         public float BlockPower { get; set; }
-        public ItmeShield(int strength, float physicalarmor, float magicarmor, int blockchance, float blockpower, Texture2D texture, Rectangle rectangle, String name, int number) : base(texture,  rectangle, name, number)
+        public ItmeShield(int strength, float physicalarmor, float magicarmor, int blockchance, float blockpower, Texture2D texture, Rectangle rectangle, String name, int number, int persID) : base(texture,  rectangle, name, number, persID)
         {
             PhysicalArmor = physicalarmor;
             MagicArmor = magicarmor;

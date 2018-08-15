@@ -41,17 +41,22 @@ namespace LOtE
             pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 64, 64, new Line(0, 0), new Line(9, 1),1);
             MainGui = new Gui(Content.Load<Texture2D>("images/pers"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(200, graphics.PreferredBackBufferHeight - 200), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
             const string dbPath = @"gamedb.db";
+            SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
             if (!File.Exists(dbPath))
             {
                 SQLiteConnection.CreateFile(dbPath);
-                SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
                 SQLiteCommand createTablePersinfo = new SQLiteCommand("CREATE TABLE persinfo(id INTEGER NOT NULL, coordinates TEXT UNIQUE NOT NULL, name TEXT UNIQUE NOT NULL, PRIMARY KEY(id));", dbConnection);
                 SQLiteCommand createTablePersitems = new SQLiteCommand("CREATE TABLE persitems(persid INTEGER, itemid INTEGER, slotid INTEGER, stuck INTEGER, strength INTEGER, damage TEXT, typeofdamage TEXT);", dbConnection);
+
                 dbConnection.Open();
                 createTablePersinfo.ExecuteNonQuery();
                 createTablePersitems.ExecuteNonQuery();
                 dbConnection.Close();
             }
+            SQLiteCommand selectLustLine = SQL.SelectLustLine("persitems", "itemid", dbConnection);
+            dbConnection.Open();
+            GlobalIdCreator.GetIDFromSql(selectLustLine);
+            dbConnection.Close();
         }
 
         protected override void LoadContent()

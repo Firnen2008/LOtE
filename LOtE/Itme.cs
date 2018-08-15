@@ -14,10 +14,13 @@ namespace LOtE
     {
         private int number;
         public bool StuckOrNot;
+        public int PersID;
         //Имя вещи
         public String Name { get; set; }
-        //ID
+        //ID предмета
         public int ID { get; set; }
+        //глобальный ID предмета
+        public int GlobalID { get; set; }
         public string TextID { get; set; }
         //Текстура
         protected Texture2D texture;
@@ -110,7 +113,7 @@ namespace LOtE
             }
         }
         // Конструктор предмета
-        public Itme(Texture2D texture, Rectangle rectangle, String name, int number)
+        public Itme(Texture2D texture, Rectangle rectangle, String name, int number, int persID)
         {
             Texture = texture;
             this.rectangle = Rectangle;

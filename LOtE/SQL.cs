@@ -84,5 +84,14 @@ namespace LOtE
 
             return new SQLiteCommand(сommand, dbConnection);
         }
+        /// <summary>
+        /// Считывание самой последней строки
+        /// </summary>
+        static public SQLiteCommand SelectLustLine(string tabl, string colon, SQLiteConnection dbConnection)
+        {
+            string сommand = "SELECT * FROM " + tabl + " ORDER BY " + colon + " DESC LIMIT 1";
+
+            return new SQLiteCommand(сommand, dbConnection);
+        }
     }
 }
