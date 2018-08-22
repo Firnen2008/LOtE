@@ -56,3 +56,5 @@ D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\fonts\Main.xnb
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\System.Data.SQLite.pdb
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\System.Data.SQLite.xml
 D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\test shield.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\test_gui.xnb
+D:\git\LOtE\LOtE\bin\Windows\x86\Debug\Content\images\Item_Sword_of_the_Wyvern.xnb

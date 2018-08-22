@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Container.cs" />
     <Compile Include="GlobalIdCreator.cs" />
+    <Compile Include="GuiContainer.cs" />
     <Compile Include="ItmeShield.cs" />
     <Compile Include="SQL.cs" />
     <Compile Include="States.cs" />

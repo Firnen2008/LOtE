@@ -13,6 +13,7 @@ namespace LOtE
         SpriteBatch spriteBatch;
 
         Gui MainGui;
+        Gui SwordGui;
 
         bool indicator1 = false;
 
@@ -39,7 +40,8 @@ namespace LOtE
         {
             base.Initialize();
             pers = new Pers(Content.Load<Texture2D>(@"images/pers"), new Rectangle(30, cont.Height.X2 / 2, 30, 30), 64, 64, new Line(0, 0), new Line(9, 1),1);
-            MainGui = new Gui(Content.Load<Texture2D>("images/pers"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(200, graphics.PreferredBackBufferHeight - 200), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
+            MainGui = new Gui(Content.Load<Texture2D>("images/test_gui"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(50, graphics.PreferredBackBufferHeight + 50), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
+            SwordGui = new Gui(Content.Load<Texture2D>("images/Item_Sword_of_the_Wyvern"), new Container(new Line(200, graphics.PreferredBackBufferWidth - 200), new Line(50, graphics.PreferredBackBufferHeight + 50), 0, 0), 0, 0, Content.Load<SpriteFont>(@"fonts/Main"), "lote", 0, 0);//@"fonts/Main"
             const string dbPath = @"gamedb.db";
             SQLiteConnection dbConnection = new SQLiteConnection(string.Format("Data Source={0};", dbPath));
             if (!File.Exists(dbPath))
@@ -82,6 +84,9 @@ namespace LOtE
                 currentTime += gameTime.ElapsedGameTime.Milliseconds;
 
                 crrKS = Keyboard.GetState();
+
+
+
                 //управление движением персонажа
                 if (preKS.IsKeyUp(Keys.S) && preKS.IsKeyUp(Keys.A) && preKS.IsKeyUp(Keys.D) && preKS.IsKeyUp(Keys.W))//Down , Left , Right , Up
                 {
@@ -163,6 +168,8 @@ namespace LOtE
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+            MainGui.DrowMainGui(gameTime, spriteBatch);
+            SwordGui.DrowMainGui(gameTime, spriteBatch);
             //spriteBatch.Draw(pers.Texture,pers.Rectangle,Color.White);
             //Отрисовка персонажа     
             spriteBatch.Draw(pers.Texture, new Vector2(pers.X, pers.Y),
