@@ -24,6 +24,9 @@ namespace LOtE
         KeyboardState crrKS;
         KeyboardState preKS;
 
+        MouseState lastMouseState;
+        Vector2 PositionMouse = Vector2.Zero;
+
 
         int currentTime = 0; // сколько времени прошло
         int period = 300; // период обновления в миллисекундах
@@ -34,6 +37,7 @@ namespace LOtE
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             cont = new Container(new Line(10, graphics.PreferredBackBufferWidth - 10), new Line(10, graphics.PreferredBackBufferHeight - 10), 0, 0);
+            IsMouseVisible = true;
         }
 
         protected override void Initialize()
@@ -84,6 +88,7 @@ namespace LOtE
                 currentTime += gameTime.ElapsedGameTime.Milliseconds;
 
                 crrKS = Keyboard.GetState();
+                MouseState CurrentMouse = Mouse.GetState();//отслеживаем мышь (мышке картинку сделать бы)
 
 
 
@@ -144,8 +149,9 @@ namespace LOtE
                     currentTime -= period-100;
                     pers.Animation(9, 1, 1);
                 }
+
                 //Скорость передвижения персонажа
-                pers.Move(3);
+                pers.Move(3, CurrentMouse);
 
                 if (Keyboard.GetState().IsKeyDown(Keys.F11))//Тех.Клавиша для фпс
                 {
