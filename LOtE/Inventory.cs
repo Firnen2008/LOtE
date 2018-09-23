@@ -7,6 +7,6 @@ namespace LOtE
 {
     class Inventory
     {
-        //List<Gui> numbers = new List<Gui>() { 1, 2, 3, 45 };
+        List<Gui> numbers = new List<Gui>() { 1, 2, 3, 45 };
     }
 }
