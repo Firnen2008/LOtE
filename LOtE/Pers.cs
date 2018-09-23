@@ -185,42 +185,49 @@ namespace LOtE
         ///Метод управление движением персонажа с помощью wasd
         ///</summary>
         ///Правил код CreaHaGame
-        public void Move(int speed)
+        public void Move(int speed, MouseState Mstate)
         {
+
             switch (Direction)
             {
                 //для ходьбы по диагонали
                 case States.LeftUp:
                     X -= speed;
                     Y -= speed;
-                    effect = SpriteEffects.FlipHorizontally;
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.None;//FlipHorizontally
                     break;
                 case States.UpRight:
                     Y -= speed;
                     X += speed;
-                    effect = SpriteEffects.None;
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.FlipHorizontally;
                     break;
                 case States.RightDown:
                     Y += speed;
                     X += speed;
-                    effect = SpriteEffects.None;
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.FlipHorizontally;
                     break;
                 case States.DownLeft:
                     Y += speed;
                     X -= speed;
-                    effect = SpriteEffects.FlipHorizontally;
-                    break; 
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.None;
+                    break;
 
                 case States.Left:
                     X -= speed;
-                    effect = SpriteEffects.FlipHorizontally;
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.None;
                     break;
                 case States.Up:
                     Y -= speed;
                     break;
                 case States.Right:
                     X += speed;
-                    effect = SpriteEffects.None;
+                    effect = (Mstate.X > X) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+                    //effect = SpriteEffects.FlipHorizontally;
                     break;
                 case States.Down:
                     Y += speed;
@@ -230,7 +237,7 @@ namespace LOtE
                     X = X;
                     break;
             }
-//=========================================================================================================================================================
+            //=========================================================================================================================================================
 
         }
     }
