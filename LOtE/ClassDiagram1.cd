@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Alphabetical">
+  <Class Name="LOtE.Container" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAABgAAAAYAA=</HashCode>
+      <FileName>Container.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.GlobalIdCreator" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>GlobalIdCreator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Gui" Collapsed="true">
+    <Position X="1" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAABIAAAAAAAAAAAAAACAACAAAgQAAAIACBACAAA=</HashCode>
+      <FileName>Gui.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.GuiContainer" Collapsed="true">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Itme" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAwAAAAEAEACQAAAAgAgAAAAIAEAAA6Ag=</HashCode>
+      <FileName>Itme.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.ItmeShield" Collapsed="true">
+    <Position X="1" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAEAAABAAABAAAAAAAAgAAA=</HashCode>
+      <FileName>ItmeShield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.ItmeSword" Collapsed="true">
+    <Position X="3.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAABAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>ItmeSword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Line" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Line.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Log" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Log.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Pers" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACACABAgIAAggAAgCgCACBABCAgQgAgAAJCAAAAYAA=</HashCode>
+      <FileName>Pers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Position" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAABAAAAYAA=</HashCode>
+      <FileName>Position.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.SQL" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAAAAgAgAQAgAAAAAAAAAAAAAEIAAA=</HashCode>
+      <FileName>SQL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.WoodenShield" Collapsed="true">
+    <Position X="1" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WoodenShield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.WoodenSword" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WoodenSword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Inventory" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LOtE.Game1" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEEAABAQAAwAAAAAAIAAAAAAUEAigAgAAAgAAAAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="LOtE.States" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACgIAAABAAAAAAAAAAAAAAAAAAAAAKACAIAAAAAI=</HashCode>
+      <FileName>States.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LOtE.DamageType" Collapsed="true">
+    <Position X="5.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAEAABA=</HashCode>
+      <FileName>States.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LOtE.PersDirection" Collapsed="true">
+    <Position X="7.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAEAAAAAAAAQAAAAAAAAAAI=</HashCode>
+      <FileName>States.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
